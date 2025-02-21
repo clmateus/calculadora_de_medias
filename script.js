@@ -20,16 +20,21 @@ function adicionaLinha(){
     const inputNomeAtividade = document.querySelector("#nome-atividade");
     const inputNotaAtividade = document.querySelector("#nota-atividade");
 
-    atividades.push(inputNomeAtividade.value);
-    notas.push(parseFloat(inputNotaAtividade.value));
-
-    let linha = `<tr>`;
-    linha += `<td>${inputNomeAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value >= mediaNota ? imgAprovado : imgReprovado}</td>`;
-    linha += `</tr>`;
-
-    linhas += linha;
+    if(atividades.includes(inputNomeAtividade.value)) {
+        alert(`Atividade: ${inputNomeAtividade.value} já foi inserida.`)
+    } else {
+        atividades.push(inputNomeAtividade.value);
+        notas.push(parseFloat(inputNotaAtividade.value));
+    
+        let linha = `<tr>`;
+        linha += `<td>${inputNomeAtividade.value}</td>`;
+        linha += `<td>${inputNotaAtividade.value}</td>`;
+        linha += `<td>${inputNotaAtividade.value >= mediaNota ? imgAprovado : imgReprovado}</td>`;
+        linha += `</tr>`;
+    
+        linhas += linha;
+    }
+    
     inputNomeAtividade.value = "";
     inputNotaAtividade.value = "";
 };
@@ -46,7 +51,9 @@ function calculaMediaFinal(){
         somaDasNotas += notas[i];
     }
 
-    return media = somaDasNotas / notas.length;
+    media = somaDasNotas / notas.length;
+
+    return media.toFixed(2)
 }
 
 function atualizaMediaFinal(){
