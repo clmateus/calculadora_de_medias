@@ -42,6 +42,7 @@ form {
     max-width: 640px;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 56px;
 }
 
 form input {
@@ -50,7 +51,6 @@ form input {
     border: none;
     border-bottom: 2px solid black;
     padding: 8px;
-    margin-bottom: 56px;
 }
 
 form button {
