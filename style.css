@@ -3,3 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body,
+input,
+button {
+    font-family: "Roboto", serif;
+}
+
+body {
+    background-color: #E7E7E7;
+    padding-top: 100px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 36px;
+    margin-right: 16px;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
